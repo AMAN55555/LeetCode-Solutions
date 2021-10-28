@@ -1,0 +1,43 @@
+bool isPalindrome(int x){
+    int num=x;
+    if(x<0)
+    {return 0;}
+    if(x/10==0)
+    {
+        return 1;
+    }
+    
+    int p=0;
+    while(x!=0)
+    {
+        x=x/10;
+        p++;
+    }
+    int z=pow(10,(p/2));
+    printf("%d ",z);
+    int a=num/z;
+    if(p%2!=0)
+    {
+        a=num/pow(10,(p/2)+1);
+    }
+    printf("%d ",a);
+    int b=num%z;
+    printf("%d ",b);
+    
+    int n=0,r;
+    int t=(p/2);
+    while(t>0)
+    {
+        t--;
+        r=b%10;
+        n=n*10+r;
+        b=b/10;
+    }
+    printf("%d ",n);
+    
+    if(n==a)
+    {return 1;}
+    else{
+        return 0;
+    }
+}
