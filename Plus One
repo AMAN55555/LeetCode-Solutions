@@ -1,0 +1,20 @@
+int* plusOne(int* digits, int digitsSize, int* returnSize){
+    int *arr=malloc(sizeof(int)*(digitsSize+1));
+    int c=1;
+    for(int i=digitsSize-1;i>=0;i--)
+    {
+        arr[i+1]=(digits[i]+c)%10;
+        c=(digits[i]+c)/10;
+    }
+    if(c>0)
+    {
+        arr[0]=c;*returnSize=digitsSize+1;
+    }
+    else{
+        for(int i=0;i<digitsSize;i++)
+        {
+            arr[i]=arr[i+1];
+        }
+        *returnSize=digitsSize;
+    }return arr;
+}
