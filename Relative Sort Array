@@ -1,0 +1,32 @@
+int* relativeSortArray(int* arr1, int arr1Size, int* arr2, int arr2Size, int* returnSize){
+    int *str=malloc(sizeof(int)*arr1Size);
+    *returnSize=arr1Size;
+    int arr[1001]={0};
+    int a=0,x,z=0;
+    for(int i=0;i<arr1Size;i++)
+    {
+        arr[arr1[i]]++;
+    }
+    for(int i=0;i<arr2Size;i++)
+    {
+        x=arr[arr2[i]];
+        while(x!=0)
+        {
+            str[a]=arr2[i];
+            a++;
+            x--;
+        }
+        arr[arr2[i]]=0;
+    }
+    while(a!=arr1Size && z<=1000)
+    {
+        x=arr[z];
+        for(int i=0;i<x;i++)
+        {
+            str[a]=z;
+            a++;
+        }
+        z++;
+    }
+    return str;
+}
