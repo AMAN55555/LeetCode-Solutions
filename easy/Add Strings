@@ -1,0 +1,32 @@
+char * addStrings(char * num1, char * num2){
+    int l1=strlen(num1);
+    int l2=strlen(num2);
+    int z=l1>l2?l1:l2;
+    char *str=malloc(sizeof(char)*(z+2));
+    int a,b,c=0,x;
+    int k=z;
+    int i=l1-1,j=l2-1;
+    while(i>=0 || j>=0 || c>0)
+    {
+        a=0,b=0;
+        if(i>=0)
+        {a=num1[i]-'0';i--;}
+        if(j>=0)
+        {b=num2[j]-'0';j--;}
+        x=a+b+c;
+        str[k]=x%10+'0';
+        printf("%d ",str[k]-'0');
+        k--;
+        c=x/10;
+    }
+    if(k==0)
+    {
+        for(int i=0;i<z;i++)
+            str[i]=str[i+1];
+        str[z]='\0';
+    }
+    else
+        str[z+1]='\0';
+    
+    return str;
+}
