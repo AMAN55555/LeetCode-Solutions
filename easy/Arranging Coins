@@ -1,0 +1,13 @@
+int arrangeCoins(int n){
+    int z=1;
+    int p=1;
+    n=n-1;
+    while(n>0)
+    {
+        z=z+1;
+        n=n-z;
+        if(n>=0)
+        {p++;}
+    }
+    return p;
+}
