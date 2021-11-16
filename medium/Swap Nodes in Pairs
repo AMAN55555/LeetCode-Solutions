@@ -1,0 +1,42 @@
+struct ListNode* swapPairs(struct ListNode* head){
+    struct ListNode* str=head;
+    struct ListNode* arr=NULL;
+    struct ListNode* temp=NULL;
+    struct ListNode* ptr=NULL;
+    struct ListNode* ktr=NULL;
+    
+    if(head==NULL || head->next==NULL)
+        return head;
+    
+    while(str!=NULL)
+    {
+        arr=str;
+        str=str->next;
+        arr->next=NULL;
+        
+        ptr=str;
+        if(ptr!=NULL)
+        {
+            str=str->next;
+            ptr->next=arr;
+        }
+        
+        if(temp!=NULL && ptr!=NULL)
+        {
+            ktr->next=ptr;
+            ktr=arr;
+        }
+        else if(ptr==NULL)
+        {ktr->next=arr;}
+        
+        if(temp==NULL)
+        {
+            temp=ptr;
+            ktr=arr;
+        }
+    }
+    
+    head=temp;
+    
+    return head;
+}
