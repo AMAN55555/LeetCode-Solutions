@@ -1,3 +1,3 @@
 # LeetCode-Solutions
 
-Easy C solutions of LeetCode Questions.
+Easy C solutions of LeetCode.
